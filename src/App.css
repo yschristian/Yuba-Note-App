@@ -1,0 +1,254 @@
+div.dark {
+  --bgColor: #75a3a3;
+  --titleColor: #f0f5f5;
+  --navBarBg: #000000;
+  --cardBg: #141f1f;
+  --cardColor: #e0ebeb;
+  --titleColor: #e0ebeb;
+  --scrollBg: #a1c4c4;
+  --crollTh: #273f3f;
+  --scrollHv: #324e4e;
+  --inputBg: #eff5f5;
+  --btnColor: #eff5f5;
+}
+
+div.light {
+  --bgColor: #e0ebeb;
+  --titleColor: #f0f5f5;
+  --navBarBg: #527a7a;
+  --cardBg: #527a7a;
+  --titleColor: #e0ebeb;
+  --cardColor: #eff5f5;
+  --scrollBg: #a1c4c4;
+  --crollTh: #273f3f;
+  --scrollHv: #324e4e;
+  --inputBg: #eff5f5;
+  --btnColor: #eff5f5;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.App {
+  min-height: 100vh;
+  background-color: var(--bgColor);
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.navbar {
+  background-color: var(--navBarBg);
+  text-align: center;
+  font-size: x-large;
+  color: #eff5f5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.darkToggle {
+  margin: auto 0px;
+}
+
+.body {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 700px){
+  .body {
+    flex-direction: column;
+  }
+  
+}
+
+.noteform, .sidebar {
+  background-color: var(--cardBg);
+  box-shadow: 0px 4px 7px -1px;
+  width: 100%;
+  margin: 10px;
+  height: 500px;
+  border-radius: 5px;
+}
+
+.sidebar h4, .noteform h4 {
+  font-size: large;
+  text-align: center;
+  color: var(--titleColor);
+}
+
+.cardCont {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  overflow-y: scroll;
+  height: 414px;
+}
+
+.card {
+  background-color: var(--cardBg);
+  color: var(--cardColor);
+  margin: 7px 10px;
+  border-radius: 7px;
+  border: 1px solid #eff5f5;
+  padding: 12px;
+}
+
+.card h5 {
+  margin: 8px 0px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 20%;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollBg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--crollTh);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollHv);
+}
+
+.nonote {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  font-size: larger;
+  color: var(--titleColor);
+}
+
+.noteform {
+  padding: 20px;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form .datain {
+  margin: 10px 0;
+}
+
+.form input, textarea {
+  width: 100%;
+  font-size: large;
+  padding: 12px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  box-shadow: inset 1px 2px 5px;
+  background-color: var(--inputBg);
+}
+
+.form textarea {
+  resize: none;
+}
+
+.btn {
+  margin: auto;
+  width: fit-content;
+}
+
+.btn button {
+  border: none;
+  padding: 10px 20px;
+  font-size: large;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--btnColor);
+  box-shadow: 1px 3px 5px 0px;
+  transition: 0.3s ease-in-out;
+}
+
+.btn button:hover {
+  box-shadow: 1px 3px 5px 2px;;
+}
+
+/* this is checkbox */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #a2c3c3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #a2c3c3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+
+.darkToggle {
+  width: fit-content;
+
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
